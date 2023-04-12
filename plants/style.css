@@ -1,45 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap'); /*font-family: 'Inika', serif;*/
 
-body {
-    width: 1440px;
-    margin: 0;
+:root {
+    --my-orange: rgb(224, 103, 51);
+    --my-green:  rgb(73, 154, 24);
+    --my-grey: rgb(113, 113, 113);
 }
 
+/*Шапка*/
+
 header {
-    width: 100%;
-    padding: 42px 110px;
+    padding-top: 42px; padding-bottom: 42px;
+    font: 16px 'Inika', sans-serif;
+
 }
 
 .logo {
-    font: 16px 'Inika', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    margin: 23px;
+    color: black;
+    text-decoration: none;
+}
+
+/*Первая секция*/
+
+body {
+    padding-left: 7.5694%; padding-right: 7.5694%;;
+    margin: 0px;
+    font-family: 'Inter', 'Inika', sans-serif;
+    font-size: 20px;
 }
 
 h1 {
     font: bold 45px/50px 'Inter', sans-serif; 
-    color: rgb(113, 113, 113);
+    color: var(--my-grey);
     text-align: left;
+    margin: 0px; margin-bottom: 42px;
 }
 
 .my-orange {
-    color: rgb(224, 103, 51);
+    color: var(--my-orange);
 }
 
 .my-green {
-    color: rgb(73, 154, 24);
+    color: var(--my-green);
 }
+
+.learnmore-button {
+    font: 16px/18px 'Inter', sans-serif;
+    padding: 11px 27px;
+    width: max-content;
+    border-radius: 10px;
+    border: 2.5px solid var(--my-orange);
+    color: black;
+    margin-top: 48px;
+}
+
+/*Секция о нас*/
 
 .description-h2 h2 {
-    font: 40px 'Inter', sans-serif; 
-    color: rgb(73, 154, 24);
+    font: 40px 'Inika', sans-serif; 
+    color: var(--my-green);
     text-align: left;
+    margin: 0px;
 }
 
-.prices-h2 h2 {
-    font: bold 40px 'Inter', sans-serif;
+.about-row p {
+    font: 20px/30px 'Inter', sans-serif; 
+    color: rgb(99, 96, 96);
+    text-align: left;
+    margin: 0px; margin-top: 40px;
 }
 
-.contacts-h2 h2 {
+.about-row {
+    display: flex; flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.about-text {
+    display: flex; flex-direction: column;
+    flex-grow: 1;
+}
+
+/*Секция сервиса и продуктов*/
+
+.h2-and-buttons {
+    display: flex; flex-direction: row;
+    align-items: center;
+}
+
+.btn-position {
+    width: 559px;
+}
+
+.orange-button {
+    font: 20px 'Inika', sans-serif;
+    color: var(--my-orange);
+    width: max-content; height: max-content;
+    border: 1px solid var(--my-orange);
+    border-radius: 5px;
+    margin-top: 38px; margin-bottom: 39px;
+    padding: 11px 41px 11px 41px;
+}
+
+.figure-cards {
+    display: flex; flex-direction: row;
+}
+
+figure {
+    width: min-content; margin: 0px;
+    border: 1px solid rgb(227, 225, 213);
+    border-radius: 20px;
+}
+
+figure img {
+    border-top-right-radius: 20px; border-top-left-radius: 20px; 
+    width: 329px; height: 350px;
+}
+
+figure figcaption h3 {
+    margin: 10px;
+    font: bold 20px/20px 'Inter', sans-serif; 
+    color: var(--my-orange);
+    text-align: center;
+}
+
+figure figcaption p {
+    margin: 0px;
+    font: 16px/20px 'Inter', sans-serif; 
+    color: var(--my-grey);
+    text-align: center;
+    padding-bottom: 36px;
+}
+
+/*Секция цен*/
+
+.prices h2 {
+    font: bold 40px/50px 'Inter', sans-serif;
+    margin: 0px; margin-top: 40px;
+}
+
+.prices {
+    display: flex; flex-direction: row;
+}
+
+.colomn-right button{
+    display: flex; flex-direction: column;
+    flex-direction: row; justify-content: flex-end;
+    align-items: center;
+    text-align: left;
+    font: bold 20px/20px 'Inter', sans-serif;
+    width: 250px; padding: 15px 0px 15px 40px;
+    border-radius: 20px;
+    margin: 32px 0px 32px 41px;
+}
+
+.colomn-right button img {
+    padding-right: 40px;
+    width: 16px;
+}
+
+.colomn-left {
+    display: flex; flex-direction: column;
+    align-items: flex-end
+}
+
+.orange-button.contact-us {
+    font-weight: bold;
+    padding: 11px 34px 11px 32px;
+}
+
+/*Секция контактов*/
+
+input {
+    width: 450px; height: 50px;
+    margin-top: 148px;
+    color: var(--my-grey);
+    font-size: 20px;
+    background-color: rgb(214, 231, 210);
+    border: none;
+}
+
+.contacts h2 {
     font: bold 40px 'Inika', serif; 
-    color: rgb(73, 154, 24);
+    color: var(--my-green);
+}
+
+.contacts {
+    display: flex; flex-direction: row; 
+    justify-content: center;
+}
+
+/*Подвал*/
+
+footer {
+    padding-top: 40px; padding-bottom: 40px;
+    display: flex; align-items: center;
 }
