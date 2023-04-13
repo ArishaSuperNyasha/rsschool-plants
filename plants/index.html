@@ -14,11 +14,11 @@
                 <img src="img/logo_vector.svg" alt="Plants logo" height="20" width="20"> <span>Plants</span>
             </div>
             <div>
-                <a href="" class="my-orange" style="font-weight: bold;">Home</a>
-                <a href="">About us</a>
-                <a href="">Service</a>
-                <a href="">Price</a>
-                <a href="">Contacts</a>
+                <a href="#welcome" class="my-orange" style="font-weight: bold;">Home</a>
+                <a href="#about">About us</a>
+                <a href="#service">Service</a>
+                <a href="#prices">Price</a>
+                <a href="#contacts">Contacts</a>
             </div>
         </nav>
     </header>
@@ -107,18 +107,27 @@
             <div class="colomn-right" style="text-align: left; flex-grow: 1;">
                 <h2>Prices</h2>
                 <button style="margin-top: 94px;">
-                    <span style="flex-grow: 1;">Basics</span> <img src="img/accordion_btn.svg" >
+                    <span style="flex-grow: 1;">Basics</span>
+                    <div class="circle light circle-pose">
+                        <img src="img/grey-check-mark.svg" alt="unselect" style="position: absolute; margin: 6px 5px;">
+                    </div>
                 </button>
                 <button>
-                    <span style="flex-grow: 1;">Standard</span> <img src="img/accordion_btn.svg" >
+                    <span style="flex-grow: 1;">Standard</span>
+                    <div class="circle light circle-pose">
+                        <img src="img/grey-check-mark.svg" alt="unselect" style="position: absolute; margin: 6px 5px;">
+                    </div>
                 </button>
                 <button style="margin-bottom: 163px;">
-                    <span style="flex-grow: 1;">Pro care</span> <img src="img/accordion_btn.svg" >
+                    <span style="flex-grow: 1;">Pro care</span> 
+                    <div class="circle light circle-pose">
+                        <img src="img/grey-check-mark.svg" alt="unselect" style="position: absolute; margin: 6px 5px;">
+                    </div>
                 </button>
             </div>
             <div class="colomn-left" style="text-align: right;">
                 <h2>Our best <span class="my-green">gardeners</span> are <br>ready to help you</h2>
-                <button class="orange-button contact-us">Contsct us</button>
+                <button type="submit" formaction="#contacts" class="orange-button contact-us">Contsct us</button>
                 <img src="img/leafs2.png" alt="leafs" width="152" height="180">
             </div>
         </div>
@@ -127,18 +136,21 @@
             <h2 style="margin-block-start: 60px; flex-grow: 1; text-align: center;">Contact us</h2>
             <form action=”/city-form”>
                 <label>
-                    <input type=”text” placeholder="City">
+                    <input type=”text” placeholder="City"> 
+                    <div class="circle dark" style="position: absolute; right: 35px;">
+                        <img src="img/white-check-mark.svg" alt="unselect" style="position: absolute; margin: 6px 5px;">
+                    </div>
                 </label>
             </form>         
         </div>
     </main>
     <footer style="justify-content: center;">
-        <div><span>©</span> <span>2023</span> <span>github</span></div>
-        <div style="flex-grow: 1; text-align: center;"><span>Rolling Scopes School</span></div>
+        <div><span>©</span> <span style="margin: 0px 20px;">2023</span> <a href="https://github.com/ArishaSuperNyasha/rsschool-plants">github</a></div>
+        <div style="flex-grow: 1; text-align: center;"><a href="https://rs.school/js-stage0/">Rolling Scopes School</ы></div>
         <div>
             <a href=""><img src="img/footer-icons/inst 1.svg" alt="Instagram link" height="32" width="32"></a>
-            <a href=""><img src="img/footer-icons/fb 1.svg" alt="Facebook link" height="32" width="32"></a>
-            <a href=""><img src="img/footer-icons/tw 1.svg" alt="Tweeter link" height="32" width="32"></a>
+            <a href=""><img src="img/footer-icons/fb 1.svg" alt="Facebook link" height="32" width="32" style="margin-left: 20px;"></a>
+            <a href=""><img src="img/footer-icons/tw 1.svg" alt="Tweeter link" height="32" width="32" style="margin: 0px 20px;"></a>
             <a href=""><img src="img/footer-icons/pinterest 1.svg" alt="Pinterest link" height="32" width="32"></a>
         </div>
     </footer>

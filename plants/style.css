@@ -157,13 +157,14 @@ figure figcaption p {
     text-align: left;
     font: bold 20px/20px 'Inter', sans-serif;
     width: 250px; padding: 15px 0px 15px 40px;
+    border: 1px solid rgba(237, 242, 236, 1);
     border-radius: 20px;
     margin: 32px 0px 32px 41px;
 }
 
-.colomn-right button img {
-    padding-right: 40px;
-    width: 16px;
+.circle-pose {
+    margin-right: 40px;
+    position: relative;
 }
 
 .colomn-left {
@@ -178,13 +179,33 @@ figure figcaption p {
 
 /*Секция контактов*/
 
-input {
-    width: 450px; height: 50px;
+label {
     margin-top: 148px;
+    display: flex; flex-direction: row-reverse; align-items: center;
+    position: relative;
+}
+
+input {
+    width: 430px; height: 40px;
+    padding: 5px 0px 5px 20px;
     color: var(--my-grey);
     font-size: 20px;
     background-color: rgb(214, 231, 210);
     border: none;
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.circle {
+    width: 16px; height: 16px; border-radius: 16px;
+}
+
+.circle.dark {
+    background-color: rgb(174, 161, 161);
+    position: absolute; right: 35px;
+}
+
+.circle.light {
+    background-color: rgb(217, 217, 217);
 }
 
 .contacts h2 {
@@ -202,4 +223,11 @@ input {
 footer {
     padding-top: 40px; padding-bottom: 40px;
     display: flex; align-items: center;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-size: 20px;
 }
