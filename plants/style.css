@@ -159,6 +159,19 @@ figure figcaption p {
 
 /*Секция цен*/
 
+.circle2 {
+    width: 6px; height: 4px;
+    padding: 6px 5px;
+    border-radius: 16px;
+}
+.circle2.dark {    
+    background-color: rgb(174, 161, 161);
+}
+
+.circle2.light {
+    background-color: rgb(217, 217, 217);
+}
+
 .prices h2 {
     font: bold 40px/50px 'Inter', sans-serif;
     margin: 0px; margin-top: 40px;
@@ -178,11 +191,6 @@ figure figcaption p {
     border: 1px solid rgba(237, 242, 236, 1);
     border-radius: 20px;
     margin: 32px 0px 32px 41px;
-}
-
-.circle-pose {
-    margin-right: 40px;
-    position: relative;
 }
 
 .colomn-left {
@@ -226,19 +234,6 @@ input:focus {
     background-color: rgb(193, 230, 152);
     color: rgb(113, 113, 113);
     box-shadow: none;
-}
-
-.circle {
-    width: 16px; height: 16px; border-radius: 16px;
-}
-
-.circle.dark {
-    background-color: rgb(174, 161, 161);
-    position: absolute; right: 35px;
-}
-
-.circle.light {
-    background-color: rgb(217, 217, 217);
 }
 
 .contacts h2 {
