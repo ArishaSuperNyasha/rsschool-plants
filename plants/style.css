@@ -86,6 +86,7 @@ h1 {
     color: rgb(99, 96, 96);
     text-align: left;
     margin: 0px; margin-top: 40px;
+    line-height: 35px;
 }
 
 .about-row {
@@ -99,11 +100,23 @@ h1 {
     flex-grow: 1;
 }
 
+#about img {
+    margin: 93px 0px 74px 153px; 
+    justify-self: right;
+}
+
 /*Секция сервиса и продуктов*/
+
+.service-buttons {
+    width: 559px; 
+    display: flex; 
+    justify-content: center;
+}
 
 .h2-and-buttons {
     display: flex; flex-direction: row;
     align-items: center;
+    margin: 40px 0px 90px 0px
 }
 
 .btn-position {
@@ -258,4 +271,124 @@ footer a {
     text-decoration: none;
     font-family: 'Inter';
     font-size: 20px;
+}
+
+@media (max-width: 380px) {
+    /*Шапка*/
+    header {
+        padding-top: 10.886%;
+        padding-bottom: 18.14%;
+    }
+
+    nav a, #welcome img, .colomn-left img {
+        display: none;
+    }
+
+    /*Первая секция*/
+    h1 {
+        font-size: 1.25em;
+        line-height: 1.4em;
+        margin-bottom: 6.17%;
+    }
+
+    .about-row p {
+        font-size: 0.75em;
+        line-height: 1.666em;
+    }
+
+    #welcome .about-row .about-text p {
+        font-size: 0.8em;
+        line-height: 1.563em;
+        margin-right: 15.48px;
+    }
+
+    .learnmore-button {
+        font-size: 0.5em;
+        line-height: 2em;
+        padding: 2.44% 5.455%;
+        border-radius: 10px;
+        border-width: 2px;
+        margin-top: 6.08%;
+        margin-bottom: 16.36%;
+    }
+
+    /*Секция о нас*/
+    .description-h2 h2 {
+        text-align: center;
+        font-size: 1.25em;
+        line-height: 1.3em;
+    }
+
+    .about-text + img {
+        margin: 0px !important;
+        width: 45.4545%;
+        height: 44.5454%;
+    }
+
+    /*Секция сервиса и продуктов*/
+    #service h2 {
+        text-align: left;
+        margin-bottom: 10.6% !important;
+        margin-right: auto !important;
+    }
+
+    body {
+        width: 86.842%;
+        padding-left: 6.579001%; padding-right: 6.579001%;
+    }
+
+    .service-buttons {
+        width: 76.363%;
+        margin-right: auto;
+    }
+
+    .service-buttons button {
+        margin: 0 4% 4% 0 !important;
+    }
+
+    .orange-button {
+        font-size: 0.75em;
+        line-height: 1.266em;
+        padding: 3.2% 11.2%;
+    }
+
+    .h2-and-buttons div {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .h2-and-buttons {
+        margin: 18.2% 0px 9.1% 0px !important;
+    }
+
+    .figure-cards {
+        margin-left: 7.577%;
+        margin-right: 7.577%;
+        margin-bottom: 0px !important;
+    }
+
+    .figure-cards p {
+        padding-bottom: 19.355%;
+        width: 72.04%;
+        margin-right: auto; margin-left: auto;
+    }
+
+    .figure-cards img {
+        width: 73.45vw;
+        height: 92.105vw
+    }
+
+    .figure-cards, .h2-and-buttons, .about-row, .prices, .contacts {
+        display: flex; flex-direction: column;
+    }
+
+    #contacts img {
+        width: 100px;
+    }
+
+    input {
+        width: 100px;
+    }
 }
