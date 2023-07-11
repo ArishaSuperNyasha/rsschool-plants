@@ -223,6 +223,13 @@ figure figcaption p {
     color: white;
 }
 
+#prices .colomn-right div {
+    margin-top: 60px; margin-bottom: 129px;
+    width: 332px; height: 282px;
+    border: 1px solid rgb(227, 225, 213); border-radius: 20px;
+
+}
+
 /*Секция контактов*/
 
 label {
@@ -276,8 +283,7 @@ footer a {
 @media (max-width: 380px) {
     /*Шапка*/
     header {
-        padding-top: 10.886%;
-        padding-bottom: 18.14%;
+        padding-top: 10.886%; padding-bottom: 18.14%;
     }
 
     nav a, #welcome img, .colomn-left img {
@@ -286,50 +292,47 @@ footer a {
 
     /*Первая секция*/
     h1 {
-        font-size: 1.25em;
-        line-height: 1.4em;
+        font-size: 1.25em; line-height: 1.4em;
         margin-bottom: 6.17%;
     }
 
     .about-row p {
-        font-size: 0.75em;
-        line-height: 1.666em;
+        font-size: 0.75em; line-height: 1.666em;
     }
 
     #welcome .about-row .about-text p {
-        font-size: 0.8em;
-        line-height: 1.563em;
+        font-size: 0.8em; line-height: 1.563em;
         margin-right: 15.48px;
     }
 
     .learnmore-button {
-        font-size: 0.5em;
-        line-height: 2em;
+        font-size: 0.5em; line-height: 2em;
         padding: 2.44% 5.455%;
-        border-radius: 10px;
-        border-width: 2px;
-        margin-top: 6.08%;
-        margin-bottom: 16.36%;
+        border-radius: 10px; border-width: 2px;
+        margin-top: 6.08%; margin-bottom: 16.36%;
     }
 
     /*Секция о нас*/
+
+    #about .about-text p {
+        margin-top: 6.53%;
+        line-height: 1.6em;
+    }
+
     .description-h2 h2 {
         text-align: center;
-        font-size: 1.25em;
-        line-height: 1.3em;
+        font-size: 1.25em; line-height: auto;
     }
 
     .about-text + img {
         margin: 0px !important;
-        width: 45.4545%;
-        height: 44.5454%;
+        width: 45.4545%; height: 44.5454%;
     }
 
     /*Секция сервиса и продуктов*/
     #service h2 {
         text-align: left;
-        margin-bottom: 10.6% !important;
-        margin-right: auto !important;
+        margin-bottom: 10.6% !important; margin-right: auto !important;
     }
 
     body {
@@ -347,16 +350,13 @@ footer a {
     }
 
     .orange-button {
-        font-size: 0.75em;
-        line-height: 1.266em;
+        font-size: 0.75em; line-height: 1.266em;
         padding: 3.2% 11.2%;
     }
 
     .h2-and-buttons div {
         max-width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        flex-direction: row; flex-wrap: wrap; justify-content: flex-start;
     }
 
     .h2-and-buttons {
@@ -364,9 +364,8 @@ footer a {
     }
 
     .figure-cards {
-        margin-left: 7.577%;
-        margin-right: 7.577%;
-        margin-bottom: 0px !important;
+        margin: 7.577% 0px !important;
+        align-items: center
     }
 
     .figure-cards p {
@@ -376,19 +375,101 @@ footer a {
     }
 
     .figure-cards img {
-        width: 73.45vw;
-        height: 92.105vw
+        width: 73.45vw; height: 92.105vw
     }
 
     .figure-cards, .h2-and-buttons, .about-row, .prices, .contacts {
         display: flex; flex-direction: column;
     }
 
-    #contacts img {
-        width: 100px;
+    /*Секция цен*/
+
+    #prices h2 {
+        font-size: 1.25em; line-height: normal;
+        text-align: center;
+        margin-top: 4.848%;
+    }
+
+    #prices .colomn-right div {
+        margin: 12.12% auto 5.76% auto;
+        width: 54.5454%; height: fit-content;
+        padding: 4.5454% 6.6667%;
+    }
+
+    .colomn-right button {
+        font-size: 0.75em; line-height: 1.333em;
+        padding: 7.778% 22.22% 7.778% 16.666% !important;
+        margin: 7.778% auto !important;
+        width: 100%; min-width: fit-content;
+    }
+
+    #prices .colomn-left, #contacts {
+        align-items: center;
+    }
+
+    #prices .colomn-left h2 {
+        margin-top: 0px;
+        font-size: 1em; line-height: 1.75em;
+        min-height: 3.85em;
+    }
+
+    #prices button img {
+        margin-right: 0px !important;
+    }
+
+    .orange-button.contact-us {
+        padding: 2.42% 6.666%;
+        margin-top: 4.24%; margin-bottom: 12.12%;
+    }
+
+    /*Секция контактов*/
+
+    #contacts h2 {
+        font-size: 1.25em; line-height: auto;
+        margin-top: 7.58% !important; margin-bottom: 24.24%;
+    }
+
+    #contacts [alt="garden woman"]{
+        width: 30.303%;
+        padding: 0px !important;
+        order: 3;
+        margin-top: 40%;
+    }
+
+    form label{
+        margin-top: 0px;
     }
 
     input {
-        width: 100px;
+        width: 90.909%;
+    }
+
+    /*Подвал*/
+
+    footer {
+        flex-wrap: wrap; flex-direction: row-reverse;
+        padding: 6.666% 0px 4.848%;
+    }
+
+    .addpad {
+        padding-top: 4.848%; padding-bottom: 2.12%;
+        flex-grow: 0 !important;
+    }
+
+    footer div {
+        display: flex; 
     }
 }
+
+/*
+@media (только маленький) {
+    .addpad {
+        padding-top: 4.848%;
+    }
+
+    footer {
+        flex-wrap: wrap; flex-direction: row-reverse;
+        padding: 6.666% 0px 4.848%;
+    }
+}
+*/
