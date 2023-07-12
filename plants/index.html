@@ -56,51 +56,53 @@
                     <button class="orange-button">Planting</button>
                 </div>
             </div>
-            <div class="figure-cards" style="margin-bottom: 55px;">
-                <figure>
-                    <img src="img/service-pics/pic1.png" alt="Garden care">
-                    <figcaption>
-                        <h3>Garden care</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure> 
-                <figure style="margin-right: auto; margin-left: auto;">
-                    <img src="img/service-pics/pic2.png" alt="Planting">
-                    <figcaption>
-                        <h3>Planting</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure>    
-                <figure>
-                    <img src="img/service-pics/pic3.png" alt="Lawn care">
-                    <figcaption>
-                        <h3>Lawn care</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure> 
-            </div>
-            <div class="figure-cards" style="margin-bottom: 119px;"> 
-                <figure>
-                    <img src="img/service-pics/pic4.png" alt="Planting">
-                    <figcaption>
-                        <h3>Planting</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure>    
-                <figure style="margin-right: auto; margin-left: auto;">
-                    <img src="img/service-pics/pic5.png" alt="Garden care">
-                    <figcaption>
-                        <h3>Garden care</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure>    
-                <figure>
-                    <img src="img/service-pics/pic6.png" alt="Planting">
-                    <figcaption>
-                        <h3>Planting</h3>
-                        <p>Lorem Ipsum has been the industry</p>
-                    </figcaption>
-                </figure>
+            <div class="cards6"> 
+                <div class="figure-cards" style="margin-bottom: 55px;">
+                    <figure>
+                        <img src="img/service-pics/pic1.png" alt="Garden care">
+                        <figcaption>
+                            <h3>Garden care</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure> 
+                    <figure style="margin-right: auto; margin-left: auto;">
+                        <img src="img/service-pics/pic2.png" alt="Planting">
+                        <figcaption>
+                            <h3>Planting</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure>    
+                    <figure>
+                        <img src="img/service-pics/pic3.png" alt="Lawn care">
+                        <figcaption>
+                            <h3>Lawn care</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure> 
+                </div>
+                <div class="figure-cards" style="margin-bottom: 119px;"> 
+                    <figure>
+                        <img src="img/service-pics/pic4.png" alt="Planting">
+                        <figcaption>
+                            <h3>Planting</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure>    
+                    <figure style="margin-right: auto; margin-left: auto;">
+                        <img src="img/service-pics/pic5.png" alt="Garden care">
+                        <figcaption>
+                            <h3>Garden care</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure>    
+                    <figure>
+                        <img src="img/service-pics/pic6.png" alt="Planting">
+                        <figcaption>
+                            <h3>Planting</h3>
+                            <p>Lorem Ipsum has been the industry</p>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
         <section id="prices" class="prices">
@@ -150,7 +152,34 @@
     </footer>
 
     <script>
-        
+        window.addEventListener('resize', function() {
+            if (window.screen.width < 769) {
+                const cardsCollection = document.querySelector('.cards6').children;
+                const div = document.createElement('div');
+                document.querySelector('.cards6').prepend(div);
+                for (card of cardsCollection) {
+                    let miniCollection = card.querySelectorAll('figure');
+                    for (item of miniCollection) { 
+                        document.querySelector('.cards6').firstChild.append(item);
+                    }
+                }
+                for (i of document.querySelector('.cards6').querySelectorAll('.figure-cards')) i.remove();
+                document.querySelector('.cards6').firstChild.setAttribute('class', 'figure-cards');
+            }
+            if ((window.screen.width >= 769) && (document.querySelector('.cards6').children.length === 1)) {
+                const cardsCollection = document.querySelector('.cards6').firstChild.querySelectorAll('figure');
+                const div = document.createElement('div');
+                document.querySelector('.cards6').prepend(div);
+                document.querySelector('.cards6').prepend(div.cloneNode(false));
+                let myDiv = document.querySelector('.cards6').firstChild;
+                for (let i = 0; i < 2; i++) {
+                    for (let c = 0 + i*3; c < 3 + i*3; c++) myDiv.append(cardsCollection[c]);
+                    myDiv = myDiv.nextSibling;
+                }
+                document.querySelector('.cards6').querySelector('.figure-cards').remove();
+                for (i of document.querySelector('.cards6').children) i.setAttribute('class', 'figure-cards');
+            }
+        });
     </script>
 </body>
 </html>

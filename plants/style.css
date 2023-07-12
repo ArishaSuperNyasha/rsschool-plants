@@ -280,6 +280,7 @@ footer a {
     font-size: 20px;
 }
 
+
 @media (max-width: 380px) {
     /*Шапка*/
     header {
@@ -321,7 +322,7 @@ footer a {
 
     .description-h2 h2 {
         text-align: center;
-        font-size: 1.25em; line-height: auto;
+        font-size: 1.25em; line-height: normal;
     }
 
     .about-text + img {
@@ -425,7 +426,7 @@ footer a {
     /*Секция контактов*/
 
     #contacts h2 {
-        font-size: 1.25em; line-height: auto;
+        font-size: 1.25em; line-height: normal;
         margin-top: 7.58% !important; margin-bottom: 24.24%;
     }
 
@@ -461,8 +462,280 @@ footer a {
     }
 }
 
+
+@media (max-width: 768px) and (min-width: 381px) {
+    /*Шапка*/
+    header {
+        padding-top: 6.9%; padding-bottom: 11.24% !important;
+    }
+
+    /*Первая секция*/
+
+    #welcome .about-row {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    #welcome img {
+        width: 42%; height: auto;
+        margin: 0px 0px 0px 42px !important;
+    }
+ 
+    #welcome h1 {
+        font-size: 1.75em; line-height: 1.43em;
+        margin-bottom: 8.7%;
+    }
+
+    h1 br {
+        display: none;
+    }
+
+    #welcome .about-row .about-text p {
+        font-size: 0.8em; line-height: 1.563em;
+    }
+
+    .learnmore-button {
+        font-size: 0.8em; line-height: 1.25em;
+        padding: 4.06% 7.83%;
+        border-radius: 10px; border-width: 2px;
+        margin-top: 8.7%; margin-bottom: 31.9%;
+    }
+
+    /*Секция о нас*/
+
+    #about .about-text p {
+        margin-top: 6%; 
+        font-size: 1em; line-height: 1.75em;
+    }
+
+    .description-h2 h2 {
+        text-align: center;
+        font-size: 1.75em;;
+    }
+
+    .about-text + img {
+        margin: 7.5% 0 0 !important;
+        width: 37.48%; height: auto; 
+    }
+
+    /*Секция сервиса и продуктов*/
+    #service h2 {
+        text-align: left;
+        margin-bottom: 6% !important; margin-right: auto !important;
+    }
+
+    body {
+        width: 86.842%;
+        padding-left: 6.5796%; padding-right: 6.5796%;
+    }
+
+    .service-buttons {
+        justify-content: flex-start;
+        margin-right: auto;
+        flex-wrap: wrap
+    }
+
+    .service-buttons button {
+        margin: 0 0 0 0;
+        padding: 2.15% 7.1556%;
+    }
+
+    .service-buttons {
+        font-size: 1.33333em; line-height: normal;
+        width: 83.8%;
+    }
+
+    .orange-button {
+        font-size: 0.75em; line-height: 1.266em;
+        padding: 3.2% 11.2%;
+    }
+
+    .h2-and-buttons {
+        margin: 18.2% 0 0.3% 0 !important;
+    }
+
+    .cards6 {
+        display: flex; flex-direction: row;
+    }
+
+    .figure-cards {
+        margin: 6% 0 4.8% !important;
+        align-items: center;
+        flex-direction: row; flex-wrap: wrap; justify-content: space-between;
+    }
+
+    figcaption h3 {
+        margin: 1.78% 0 3.27% !important;
+    }
+
+    figure {
+        margin: 0 0 5.7% !important; 
+    }
+
+    .figure-cards p {
+        padding-bottom: 7.1%;
+        width: 72.04%;
+        margin-left: auto; margin-right: auto;
+    }
+
+    .figure-cards img {
+        width: 36.5vw; height: auto;
+    }
+
+    .h2-and-buttons, .about-row, .prices, .contacts {
+        display: flex; flex-direction: column;
+    }
+
+    /*Секция цен*/
+
+    #prices {
+        display: flex; flex-direction: row
+    }
+
+    #prices h2 {
+        font-size: 1.75em; line-height: 1.2em;
+    }
+
+    #prices .colomn-right div {
+        margin: 7.496% 2px 25.04% 2px;
+        width: 57.35%; height: fit-content;
+        padding: 0.47% 9.41%;
+    }
+
+    .colomn-right button {
+        font-size: 1em; line-height: 1em;
+        padding: 6.3% 16% !important;
+        margin: 12.8% auto !important;
+        width: 100%; min-width: fit-content;
+    }
+
+    #prices .colomn-left, #contacts {
+        align-items: right;
+    }
+
+    #prices .colomn-left h2 {
+        margin-top: 4.66688em;
+        font-size: 1.25em; line-height: 1.4em;
+        min-height: 3.85em;
+    }
+
+    #prices button img {
+        margin-right: 0px !important;
+    }
+
+    .orange-button.contact-us {
+        font-size: 1em; line-height: 1.3em;
+        padding: 4.2% 11.2%;
+        margin-top: 7.7%; margin-bottom: 11.9%;
+    }
+
+    .colomn-left img {
+        margin-bottom: 31%;
+        width: 55.8%; height: auto;
+    }
+
+    /*Секция контактов*/
+
+    #contacts {
+        align-items: center;
+    }
+
+    #contacts h2 {
+        font-size: 2em; line-height: normal;
+        margin-top: 5.997% !important; margin-bottom: 14.992%;
+    }
+
+    #contacts [alt="garden woman"]{
+        width: 30.303%;
+        padding: 0px !important;
+        order: 3;
+        margin-top: 37.48%;
+    }
+
+    form label{
+        margin-top: 0px;
+        justify-content: center;
+        position: relative;
+    }
+
+    form {
+        width: 67.466%;
+    }
+
+    /*Подвал*/
+
+    footer {
+        flex-direction: column;
+        padding: 4.848% 0px 4.848%;
+    }
+
+    .addpad {
+        padding-top: 2.083%; padding-bottom: 2.12%;
+        flex-grow: 0 !important;
+    }
+
+    footer div {
+        display: flex; 
+    }
+}
+
 /*
 @media (только маленький) {
+    nav a, #welcome img, .colomn-left img {
+        display: none;
+    }
+
+    #prices h2 {
+        font-size: 1.25em; line-height: normal;
+        text-align: center;
+        margin-top: 4.848%;
+    }
+
+    #prices .colomn-right div {
+        margin: 12.12% auto 5.76% auto;
+        width: 54.5454%; height: fit-content;
+        padding: 4.5454% 6.6667%;
+    }
+
+    .colomn-right button {
+        font-size: 0.75em; line-height: 1.333em;
+        padding: 7.778% 22.22% 7.778% 16.666% !important;
+        margin: 7.778% auto !important;
+        width: 100%; min-width: fit-content;
+    }
+
+    #prices .colomn-left, #contacts {
+        align-items: center;
+    }
+
+    #prices .colomn-left h2 {
+        margin-top: 0px;
+        font-size: 1em; line-height: 1.75em;
+        min-height: 3.85em;
+    }
+
+    #prices button img {
+        margin-right: 0px !important;
+    }
+
+    .orange-button.contact-us {
+        padding: 2.42% 6.666%;
+        margin-top: 4.24%; margin-bottom: 12.12%;
+    }
+
+    #contacts h2 {
+        font-size: 1.25em;
+        margin-top: 7.58% !important; margin-bottom: 24.24%;
+    }
+
+    #contacts [alt="garden woman"]{
+        margin-top: 40%;
+    }
+
+    form {
+        width: 90.909%;
+    }
+
     .addpad {
         padding-top: 4.848%;
     }
