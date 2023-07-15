@@ -13,7 +13,7 @@
             <div style="flex-grow: 1;">
                 <img src="img/logo_vector.svg" alt="Plants logo" height="20" width="20"> <span>Plants</span>
             </div>
-            <div>
+            <div class="top-a-nav">
                 <a href="#welcome" class="my-orange" style="font-weight: bold;">Home</a>
                 <a href="#about">About us</a>
                 <a href="#service">Service</a>
@@ -51,9 +51,9 @@
             <div class="h2-and-buttons">
                 <h2 style="margin-right: 142px;">Service and our <br> projects</h2>
                 <div class="service-buttons">
-                    <button class="orange-button">Gardens</button>
-                    <button class="orange-button" style="margin-left: 38px; margin-right: 38px; flex-grow: 1;">Lawn</button>
-                    <button class="orange-button">Planting</button>
+                    <button class="orange-button"><div>Gardens</div></button>
+                    <button class="orange-button"><div>Lawn</div></button>
+                    <button class="orange-button"><div>Planting</div></button>
                 </div>
             </div>
             <div class="cards6"> 
@@ -78,9 +78,7 @@
                             <h3>Lawn care</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
-                    </figure> 
-                </div>
-                <div class="figure-cards" style="margin-bottom: 119px;"> 
+                    </figure>
                     <figure>
                         <img src="img/service-pics/pic4.png" alt="Planting">
                         <figcaption>
@@ -106,7 +104,7 @@
             </div>
         </section>
         <section id="prices" class="prices">
-            <div class="colomn-right" style="text-align: left; flex-grow: 1;">
+            <div class="colomn-right" style="text-align: left;">
                 <h2>Prices</h2>
                 <div>
                     <button>
@@ -143,41 +141,89 @@
     <footer style="justify-content: center;">
         <div><span>©</span> <span style="margin: 0px 20px;">2023</span> <a href="https://github.com/ArishaSuperNyasha/rsschool-plants" target="_blank">github</a></div>
         <div class="addpad" style="flex-grow: 1; text-align: center;"><a href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a></div>
-        <div>
+        <div style="display: flex; width: 15%; min-width: 182.62px; justify-content: space-between;">
             <a href="https://vk.com" target="_blank"><img src="img/footer-icons/inst1.svg" alt="Instagram link" height="32" width="32"></a>
             <a href="https://vk.com" target="_blank"><img src="img/footer-icons/fb1.svg" alt="Facebook link" height="32" width="32" style="margin-left: 20px;"></a>
             <a href="https://vk.com" target="_blank"><img src="img/footer-icons/tw1.svg" alt="Tweeter link" height="32" width="32" style="margin: 0px 20px;"></a>
             <a href="https://vk.com" target="_blank"><img src="img/footer-icons/pinterest1.svg" alt="Pinterest link" height="32" width="32"></a>
         </div>
     </footer>
+    <div class="showMenu">
+        <div>
+            <a href="#welcome" class="my-orange" style="font-weight: bold;">Home</a>
+            <a href="#about">About us</a>
+            <a href="#service">Service</a>
+            <a href="#prices">Price</a>
+            <a href="#contacts">Contacts</a>
+        </div>
+        <button class="learnmore-button" style="font-weight: bold;">X</button>
+    </div>
 
     <script>
-        window.addEventListener('resize', function() {
-            if (window.screen.width < 769) {
-                const cardsCollection = document.querySelector('.cards6').children;
+        const createBurgerIcon = function() {
+            if (document.querySelector('.burger') === null) {
+                const burger = document.createElement('div');
+                burger.className = 'burger';
+                const elem = document.querySelector('.logo');
+                elem.append(burger);
                 const div = document.createElement('div');
-                document.querySelector('.cards6').prepend(div);
-                for (card of cardsCollection) {
-                    let miniCollection = card.querySelectorAll('figure');
-                    for (item of miniCollection) { 
-                        document.querySelector('.cards6').firstChild.append(item);
-                    }
-                }
-                for (i of document.querySelector('.cards6').querySelectorAll('.figure-cards')) i.remove();
-                document.querySelector('.cards6').firstChild.setAttribute('class', 'figure-cards');
+                for (let i = 0; i < 4; i++) burger.append(div.cloneNode(false));
             }
-            if ((window.screen.width >= 769) && (document.querySelector('.cards6').children.length === 1)) {
-                const cardsCollection = document.querySelector('.cards6').firstChild.querySelectorAll('figure');
-                const div = document.createElement('div');
-                document.querySelector('.cards6').prepend(div);
-                document.querySelector('.cards6').prepend(div.cloneNode(false));
-                let myDiv = document.querySelector('.cards6').firstChild;
-                for (let i = 0; i < 2; i++) {
-                    for (let c = 0 + i*3; c < 3 + i*3; c++) myDiv.append(cardsCollection[c]);
-                    myDiv = myDiv.nextSibling;
+        };
+
+        const showMenu = function(event) {
+            const burger = document.querySelector('.burger');
+            const menu = document.querySelector('.showMenu');
+            if (event.target.closest('.burger') === burger) {
+                burger.style.opacity = '0';
+                menu.style.display = 'flex';
+            }
+            else {
+                burger.style.display = 'flex';
+                menu.style.opacity = '0';
+                burger.dataset.isTrue = 'true';
+            }
+        };
+
+        const yyy = function(event) {
+            if ((event.target.tagName === 'A') || 
+            (!event.target.closest('.showMenu') && document.querySelector('.showMenu').style.opacity === '1')) {
+                showMenu(event);
+            }
+            if (document.querySelector('.burger').style.opacity === 'none' && document.querySelector('.showMenu').style.opacity === 'none') {
+                showMenu(event);
+            }
+        }
+
+        const xxx = function(event) {
+            const burger = document.querySelector('.burger');
+            const menu = document.querySelector('.showMenu');
+            if (event.target.style.opacity === '0') {
+                if (event.target === burger && burger.dataset.isTrue !== 'true') {
+                    menu.style.opacity = '1';
+                    burger.style.display = 'none';
                 }
-                document.querySelector('.cards6').querySelector('.figure-cards').remove();
-                for (i of document.querySelector('.cards6').children) i.setAttribute('class', 'figure-cards');
+                else {
+                    burger.style.opacity = '1';
+                    menu.style.display = 'none';
+                    burger.dataset.isTrue = 'false';
+                }
+                
+            }
+        };
+        
+        createBurgerIcon();
+        document.querySelector('.burger').addEventListener('click', showMenu);
+        document.querySelector('.burger').addEventListener('transitionend', xxx);
+        document.querySelector('.showMenu button').addEventListener('click', showMenu);
+        document.querySelector('.showMenu').addEventListener('transitionend', xxx);
+
+        document.querySelector('.showMenu').addEventListener('click', yyy);
+        document.body.addEventListener('click', yyy);
+
+        window.addEventListener('resize', () => {
+            if (window.screen.width > 499) {
+                document.querySelector('.showMenu button').dispatchEvent(new Event('click'));
             }
         });
     </script>
