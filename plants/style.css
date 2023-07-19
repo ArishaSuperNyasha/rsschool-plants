@@ -12,6 +12,53 @@ html {
     font-size: 16px;
 }
 
+#prices button{
+    display: flex; flex-direction: column; align-items: flex-start;
+}
+
+.blured {
+    filter: blur(3px) !important;
+}
+
+.accordion section {
+    width: 100%; height: 1px; 
+    background-color: rgb(174, 161, 161);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.accordion p {
+    color: var(--my-grey);
+    font: normal 10px/10px 'Inter', 'Inika', sans-serif;
+}
+
+.accordion .section-price {
+    font-size: 12px; line-height: 20px;
+    color: black;
+}
+
+.accordion .section-price span {
+    color: var(--my-orange);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.accordion a {
+    font: bold 14px/20px 'Inter', 'Inika', sans-serif;
+    color: var(--my-grey);
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px 20px;
+}
+
+#prices [data-val='active'] {
+    background-color: rgb(214, 231, 210);
+}
+
+#prices [data-val='active'] .post-verstka {
+    border-color: rgba(0, 0, 0, 0);
+}
+
 /*Шапка*/
 
 .showMenu {
@@ -173,7 +220,7 @@ h1 {
     width: fit-content; height: fit-content;
 }
 
-.orange-button:hover {
+#service [data-val='active']{
     background-color: var(--my-orange);
     color: white;
 }
@@ -233,7 +280,7 @@ figure figcaption p {
     display: flex; flex-direction: row;
 }
 
-.colomn-right button{
+.post-verstka, .colomn-right button{
     display: flex; flex-direction: column;
     flex-direction: row; justify-content: flex-end;
     align-items: center;
@@ -243,6 +290,10 @@ figure figcaption p {
     border: 1px solid rgba(237, 242, 236, 1);
     border-radius: 20px;
     margin: 32px 0px 32px 41px;
+}
+
+.post-verstka {
+    margin: 0 !important; padding: 0 !important;
 }
 
 .colomn-left {
@@ -264,7 +315,8 @@ figure figcaption p {
 
 #prices .colomn-right div {
     margin-top: 60px; margin-bottom: 129px;
-    width: 332px; height: 282px;
+    width: 332px; 
+    height: fit-content; min-height: 282px;
     border: 1px solid rgb(227, 225, 213); border-radius: 20px;
 
 }
@@ -325,6 +377,31 @@ footer img {
 }
 
 @media (min-width: 1024px) {
+    
+    .accordion section {
+        height: 0.0347vw;
+        margin-top: 0.694vw;
+        border-radius: 0.694vw;
+    }
+
+    .accordion p {
+        font-size: 0.694vw; line-height: 0.694vw;
+    }
+
+    .accordion .section-price {
+        font-size: 0.833vw; line-height: 1.389vw;
+    }
+
+    .accordion .section-price span {
+        font-size: 1.111vw;
+    }
+
+    .accordion a {
+        font-size: 0.972vw; line-height: 1.389vw;
+        border-radius: 0.694vw;
+        padding: 0.2083vw 1.389vw;
+    }
+
     /*Шапка*/
 
     header {
@@ -466,7 +543,7 @@ footer img {
         border-radius: 16px;
     }
 
-    .prices .circle2 {
+    .prices {
         margin-right: 1.111vw !important;
     }
 
@@ -491,9 +568,9 @@ footer img {
         flex-grow: 1;
     }
     
-    .colomn-right button{
+    .post-verstka, .colomn-right button{
         font: bold 1.3889vw/1.3889vw 'Inter', sans-serif;
-        width: 100%; padding: 6% 0 6% 16%;
+        width: 100%; padding: 6% 16%;
         border: 1px solid rgba(237, 242, 236, 1);
         border-radius: 20px;
         margin: 0;
@@ -509,9 +586,10 @@ footer img {
         display: flex; flex-direction: column;
         justify-content: space-between; align-items: stretch;
         margin: 7.822% auto 0 0;
-        width: 32.593%; height: 14.862vw;
+        width: 17.36vw; 
+        min-height: 14.862vw;
         border: 1px solid rgb(227, 225, 213); border-radius: 20px;
-        padding: 4.43% 5.345%; 
+        padding: 2.34vw 2.847vw; 
     
     }
     
@@ -688,16 +766,22 @@ footer img {
     }
 
     #prices .colomn-right div {
+        display: flex; flex-direction: column; justify-content: space-between;
+        min-height: 46.579vw;
         margin: 12.12% auto 5.76% auto;
-        width: 54.5454%; height: fit-content;
-        padding: 4.5454% 6.6667%;
+        width: 54.5454%;
+        padding: 7.632vw 5.789vw;
     }
 
-    .colomn-right button {
-        font-size: 0.75em; line-height: 1.333em;
+    .post-verstka, .colomn-right button {
+        font-size: 3.947vw; line-height: 1.333em;
         padding: 7.778% 22.22% 7.778% 16.666% !important;
-        margin: 7.778% auto !important;
+        margin: 0 !important;
         width: 100%; min-width: fit-content;
+    }
+
+    .post-verstka {
+        margin: 0 !important; padding: 0 !important;
     }
 
     #prices .colomn-left, #contacts {
@@ -921,7 +1005,7 @@ footer img {
     #prices .colomn-right div {
         margin: 13.27% 10.6% 20.17% 0;
         width: auto; max-width: 65.58%;
-        height: 24.403vh !important;
+        min-height: 24.403vh !important;
         padding: 8.92% 10.7556%;
         display: flex; flex-direction: column; justify-content: space-between;
     }
@@ -930,11 +1014,15 @@ footer img {
         min-width: 57.12%;
     }
 
-    .colomn-right button {
+    .post-verstka, .colomn-right button {
         font-size: 1em; line-height: 1em;
         margin: 0;
         padding: 6.402% 16.005% !important;
         width: 100%;
+    }
+
+    .post-verstka {
+        padding: 0 !important; margin: 0 !important;
     }
 
     #contacts {
