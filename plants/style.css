@@ -7,6 +7,8 @@
     --my-grey: rgb(113, 113, 113);
 }
 
+
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -45,10 +47,17 @@ html {
 
 .accordion a {
     font: bold 14px/20px 'Inter', 'Inika', sans-serif;
+    text-decoration: none;
     color: var(--my-grey);
     background-color: white;
     border-radius: 10px;
     padding: 3px 20px;
+}
+
+.accordion a:hover {
+    background-color: var(--my-orange);
+    color: white;
+    transition: 0.25s;
 }
 
 #prices [data-val='active'] {
@@ -57,6 +66,97 @@ html {
 
 #prices [data-val='active'] .post-verstka {
     border-color: rgba(0, 0, 0, 0);
+}
+
+#prices .circle2.light:hover{
+    filter: invert(100%) brightness(4.5);
+    transition: 0.001s;
+}
+
+#prices [data-val='active'] .circle2.light{
+    transform: rotate(180deg);
+    filter: invert(100%) brightness(4.5);
+    transition: 0.5s;
+}
+
+#contacts form div {
+    display: flex; flex-direction: column; 
+    justify-content: space-between; 
+    padding: calc(10vw / 144 * 27) calc(10vw / 144 * 50) calc(10vw / 144 * 31) calc(10vw / 144 * 20); 
+    height: calc(10vw / 144 * 176);
+    background-color: rgb(214, 231, 210);
+}
+
+#contacts form div a {
+    padding: 0 calc(60vw / 144);
+    color: rgb(73, 154, 24);
+    border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+td, #contacts form div a {  
+    font: normal calc(160vw / 144)/calc(400vw / 144) 'Inter', 'Inika', sans-serif;
+    letter-spacing: calc(5vw / 144);
+}
+
+td:first-child {
+    color: black;
+    padding-right: calc(100vw / 144);
+}
+
+td:last-child {
+    flex-grow: 1;
+    color: var(--my-grey);
+}
+
+table {
+    display: flex;
+    width: 100%;
+    padding: calc(10vw / 144 * 17) calc(10vw / 144 * 35) calc(10vw / 144 * 32);
+    border: calc(10vw / 144) solid black;
+    border-radius: calc(10vw / 144 * 20);
+    margin-top: calc(10vw / 144 * 47);
+}
+
+#contacts table .learnmore-button {
+    display: block; text-align: center;
+    font: bold calc(10vw / 144 * 10) 'Inika', sans-serif;
+    width: calc(10vw / 144 * 122);
+    border-radius: calc(10vw / 144 * 5);
+    border-width: calc(10vw / 144);
+}
+
+@media (max-width: 1023px) {
+    #contacts form div {
+        padding: 27px 50px 31px 20px; 
+        height: 176px;
+    }
+    
+    #contacts form div a {
+        padding: 0 6px;
+    }
+    
+    td, #contacts form div a {  
+        font-size: 16px; line-height: 40px;
+        letter-spacing: 0.5px;
+    }
+    
+    td:first-child {
+        padding-right: 10px;
+    }
+    
+    table {
+        padding: 17px 35px 32px;
+        border-width: 1px;
+        border-radius: 20px;
+        margin-top: 47px;
+    }
+    
+    #contacts table .learnmore-button {
+        font-size: 10px;
+        width: 122px;
+        border-radius: 5px;
+        border-width: 1px;
+    }
 }
 
 /*Шапка*/
@@ -115,8 +215,8 @@ html {
 /*Первая секция*/
 
 body {
-    padding-left: 7.5694%; padding-right: 7.5694%;;
-    margin: 0px;
+    padding: 0;
+    margin: 0 7.5694%;
     font-family: 'Inter', 'Inika', sans-serif;
     font-size: 20px;
 }
@@ -234,6 +334,7 @@ figure {
     width: min-content; margin: 0px;
     border: 1px solid rgb(227, 225, 213);
     border-radius: 20px;
+    transition: 0.25s;
 }
 
 figure img {
@@ -308,7 +409,7 @@ figure figcaption p {
     transition: 0.25s;
 }
 
-.orange-button.contact-us:hover{
+.orange-button:hover{
     background-color: var(--my-orange);
     color: white;
 }
@@ -340,11 +441,19 @@ input {
     transition: 0.6s;
 }
 
-input:focus {
+input:focus, input[data-val='active'] {
     outline: none;
-    background-color: rgb(193, 230, 152);
-    color: rgb(113, 113, 113);
+    filter: saturate(4) hue-rotate(-15deg);
     box-shadow: none;
+}
+
+#contacts img {
+    transition: 0.6s;
+}
+
+#contacts img[data-val='active'] {
+    background-color: rgb(139, 160, 126);
+    transform: rotate(180deg);
 }
 
 .contacts h2 {
@@ -436,12 +545,8 @@ footer img {
         margin: 4.9% 18.38% 4.9% 0 !important;
     }
     
-    html {
-        width: 100vw;
-    }
-    
     body {
-        padding: 0 7.639%;
+        margin: 0 7.639%;
         font-size: 1.3889vw;
     }
     
@@ -701,7 +806,7 @@ footer img {
 
     body {
         width: 86.842% !important;
-        margin: 0; padding: 0 6.578947% !important;
+        margin: 0 6.578947% !important;
     }
 
     .service-buttons {
@@ -928,7 +1033,7 @@ footer img {
 
     body {
         width: 86.842%;
-        padding-left: 6.5796%; padding-right: 6.5796%;
+        margin: 0 6.5796%;
     }
 
     .service-buttons {
@@ -1079,6 +1184,18 @@ footer img {
     form {
         width: 67.466%;
     }
+
+    input {
+        width: 58.59375vw;
+        height: 5.51vw;
+        padding: 0.65vw 2.6vw 0.65vw 4.5573vw;
+        font-size: 2.6vw; line-height: 5.21vw;
+        box-shadow: 0 0.521vw 0.521vw 0.26vw rgba(0, 0, 0, 0.25);
+    }
+
+    #contacts .circle2 {
+        width: 0.78vw; height: 0.521vw;
+    } 
 
     /*Подвал*/
 
