@@ -22,7 +22,7 @@ html {
 }
 
 .blured {
-    filter: blur(3px) !important;
+    filter: blur(0.208vw) !important;
 }
 
 .accordion section {
@@ -135,6 +135,10 @@ table {
 }
 
 @media (max-width: 1023px) {
+    .blured {
+        filter: blur(0.9765vw) !important;
+    }
+
     #contacts form div {
         padding: 27px 50px 31px 20px; 
         height: 176px;
@@ -541,8 +545,8 @@ footer img {
     /*Первая секция*/
     
     .about-row [alt="leafs"] {
-        width: 36.8% !important; height: auto !important; 
-        margin: 4.9% 18.38% 4.9% 0 !important;
+        width: 31.181vw; height: auto; 
+        margin: 4.167vw 15.556vw 4.167vw 0;
     }
     
     body {
@@ -558,7 +562,7 @@ footer img {
     .learnmore-button {
         font: 1.1111vw/1.25vw 'Inter', sans-serif;
         padding: 2.01% 4.755%;
-        border-radius: 10px;
+        border-radius: 0.694vw;
         margin-top: 8.778%;
     }
     
@@ -580,8 +584,8 @@ footer img {
     }
     
     #about img {
-        width: 38.03%; height: auto;
-        margin: 0; margin-left: 12.54%;
+        width: 32.22vw; height: auto;
+        margin: 0; margin-left: 10.625vw;
     }
     
     /*Секция сервиса и продуктов*/
@@ -607,8 +611,8 @@ footer img {
     .orange-button {
         width: 28.8%; height: 3.47vw;
         font: 1.3889vw 'Inika', sans-serif;
-        border: 1px solid var(--my-orange);
-        border-radius: 5px;
+        border: 0.0694vw solid var(--my-orange);
+        border-radius: 0.347vw;
         margin: 0;
         padding: 0;
     }
@@ -624,7 +628,7 @@ footer img {
     }
     
     figure img {
-        border-top-right-radius: 20px; border-top-left-radius: 20px;
+        border-top-right-radius: 1.389vw; border-top-left-radius: 1.389vw;
         object-fit: cover;
         width: 22.847222vw; height: 24.305555vw;
     }
@@ -645,7 +649,7 @@ footer img {
         min-width: 6px; min-height: 4px;
         width: 0.4167vw; height: 0.2778vw;
         padding: 0.4167vw 0.347vw;
-        border-radius: 16px;
+        border-radius: 1.11vw;
     }
 
     .prices {
@@ -676,8 +680,8 @@ footer img {
     .post-verstka, .colomn-right button{
         font: bold 1.3889vw/1.3889vw 'Inter', sans-serif;
         width: 100%; padding: 6% 16%;
-        border: 1px solid rgba(237, 242, 236, 1);
-        border-radius: 20px;
+        border: 0.0694vw solid rgba(237, 242, 236, 1);
+        border-radius: 1.389vw;
         margin: 0;
     }
     
@@ -693,7 +697,7 @@ footer img {
         margin: 7.822% auto 0 0;
         width: 17.36vw; 
         min-height: 14.862vw;
-        border: 1px solid rgb(227, 225, 213); border-radius: 20px;
+        border: 0.0694vw solid rgb(227, 225, 213); border-radius: 1.389vw;
         padding: 2.34vw 2.847vw; 
     
     }
@@ -776,7 +780,7 @@ footer img {
     .learnmore-button {
         font-size: 0.5em; line-height: 2em;
         padding: 2.44% 5.455%;
-        border-radius: 10px; border-width: 2px;
+        border-radius: 2.6316vw; border-width: 0.526vw;
         margin-top: 6.08%;
     }
 
@@ -1000,7 +1004,7 @@ footer img {
     .learnmore-button {
         font-size: 0.8em; line-height: 1.25em;
         padding: 4.06% 7.83%;
-        border-radius: 10px; border-width: 2px;
+        border-radius: 1.3vw; border-width: 0.13vw;
         margin-top: 8.7%;
     }
 
