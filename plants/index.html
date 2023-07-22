@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
     <link rel="icon" href="img/logo_vector.svg" type="image/svg" sizes="32x32">
+    <style>
+    </style>
 </head>
 <body>
     <header>
@@ -25,7 +27,7 @@
     <main>
         <section id="welcome">
             <div class="about-row">
-                <img src="img/leafs.png" alt="leafs" width="449" height="407" style="margin: 63px 224px 62px 0px;">
+                <img src="img/leafs.png" alt="leafs">
                 <div class="about-text">
                     <h1>We grow <span class="my-green">plants</span> and give <br>you oxygen</h1>
                     <p style=" margin-top: 0px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -51,51 +53,51 @@
             <div class="h2-and-buttons">
                 <h2 style="margin-right: 142px;">Service and our <br> projects</h2>
                 <div class="service-buttons">
-                    <button class="orange-button"><div>Gardens</div></button>
-                    <button class="orange-button"><div>Lawn</div></button>
-                    <button class="orange-button"><div>Planting</div></button>
+                    <button class="orange-button" data-gardening="Garden care" data-val="inactive"><div>Gardens</div></button>
+                    <button class="orange-button" data-gardening="Lawn care" data-val="inactive"><div>Lawn</div></button>
+                    <button class="orange-button" data-gardening="Planting" data-val="inactive"><div>Planting</div></button>
                 </div>
             </div>
             <div class="cards6"> 
                 <div class="figure-cards" style="margin-bottom: 55px;">
                     <figure>
                         <img src="img/service-pics/pic1.png" alt="Garden care">
-                        <figcaption>
+                        <figcaption data-gardening="Garden care">
                             <h3>Garden care</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
                     </figure> 
                     <figure style="margin-right: auto; margin-left: auto;">
                         <img src="img/service-pics/pic2.png" alt="Planting">
-                        <figcaption>
+                        <figcaption data-gardening="Planting">
                             <h3>Planting</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
                     </figure>    
                     <figure>
                         <img src="img/service-pics/pic3.png" alt="Lawn care">
-                        <figcaption>
+                        <figcaption data-gardening="Lawn care">
                             <h3>Lawn care</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
                     </figure>
                     <figure>
                         <img src="img/service-pics/pic4.png" alt="Planting">
-                        <figcaption>
+                        <figcaption data-gardening="Planting">
                             <h3>Planting</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
                     </figure>    
                     <figure style="margin-right: auto; margin-left: auto;">
                         <img src="img/service-pics/pic5.png" alt="Garden care">
-                        <figcaption>
+                        <figcaption data-gardening="Garden care">
                             <h3>Garden care</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
                     </figure>    
                     <figure>
                         <img src="img/service-pics/pic6.png" alt="Planting">
-                        <figcaption>
+                        <figcaption data-gardening="Planting">
                             <h3>Planting</h3>
                             <p>Lorem Ipsum has been the industry</p>
                         </figcaption>
@@ -107,17 +109,23 @@
             <div class="colomn-right" style="text-align: left;">
                 <h2>Prices</h2>
                 <div>
-                    <button>
-                        <span style="flex-grow: 1;">Basics</span>
-                        <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute; margin-right: 40px;">
+                    <button data-val="inactive">
+                        <section class="post-verstka">
+                            <span style="flex-grow: 1;">Basics</span>
+                            <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute;">
+                        </section>
                     </button>
-                    <button>
-                        <span style="flex-grow: 1;">Standard</span>
-                        <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute; margin-right: 40px;">
+                    <button data-val="inactive">
+                        <section class="post-verstka">
+                            <span style="flex-grow: 1;">Standard</span>
+                            <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute;">
+                        </section>
                     </button>
-                    <button>
-                        <span style="flex-grow: 1;">Pro care</span> 
-                        <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute; margin-right: 40px;">
+                    <button data-val="inactive">
+                        <section class="post-verstka">
+                            <span style="flex-grow: 1;">Pro care</span> 
+                            <img src="img/grey-check-mark.svg" class="circle2 light" alt="unselect" style="position: absolute;">
+                        </section>
                     </button>
                 </div>
             </div>
@@ -130,11 +138,11 @@
         <section id="contacts" class="contacts">
             <img src="img/contact_woman.png" alt="garden woman" width="400" style="padding-top: 53px; padding-right: 50px;">
             <h2 style="margin-block-start: 60px; flex-grow: 1; text-align: center;">Contact us</h2>
-            <form action=”/city-form”>
+            <form action="/city-form">
                 <label>
-                    <input type="text" placeholder="City"> 
-                    <img src="img/white-check-mark.svg" class="circle2 dark" alt="unselect" style="position: absolute; right: 35px;">
-                </label>
+                    <input type="text" placeholder="City" readonly data-val="inactive"> 
+                    <img src="img/white-check-mark.svg" class="circle2 dark" alt="unselect" style="position: absolute; right: 35px;" data-val="inactive">
+                </label>               
             </form>         
         </section>
     </main>
@@ -160,7 +168,7 @@
     </div>
 
     <script>
-        const createBurgerIcon = function() {
+        function createBurgerIcon () {
             if (document.querySelector('.burger') === null) {
                 const burger = document.createElement('div');
                 burger.className = 'burger';
@@ -170,62 +178,303 @@
                 for (let i = 0; i < 4; i++) burger.append(div.cloneNode(false));
             }
         };
+        createBurgerIcon();
 
-        const showMenu = function(event) {
+        
+        function burgerMenu (event) {
             const burger = document.querySelector('.burger');
             const menu = document.querySelector('.showMenu');
-            if (event.target.closest('.burger') === burger) {
-                burger.style.opacity = '0';
-                menu.style.display = 'flex';
+
+            let elem = event.target;
+            const ifBurger = elem.closest('.burger');
+            const ifMenuBut = elem.closest('.showMenu button');
+
+            function eventTypeCheck (curElem, another, type) {
+                if (type === 'click') {
+                    curElem.style.opacity = '0';
+                    another.style.display = 'flex';
+                }
+                else if (type === 'transitionend' && curElem.style.opacity === '0') {
+                    curElem.style.display = 'none';
+                    another.style.opacity = '1';
+                }
+                return;
+            } 
+            if (ifBurger) {
+                eventTypeCheck(burger, menu, event.type);
+            }
+            else if (ifMenuBut) {
+                eventTypeCheck(menu, burger, event.type);
+            }
+
+            else if (burger.style.opacity === menu.style.opacity) {
+                eventTypeCheck(menu, burger, 'transitionend');
             }
             else {
-                burger.style.display = 'flex';
-                menu.style.opacity = '0';
-                burger.dataset.isTrue = 'true';
+                function hideMenu() {
+                    eventTypeCheck(menu, burger, 'click');
+                }
+                if (elem.closest('.showMenu')) {
+                    if (elem.closest('a')) {
+                        hideMenu();
+                    }
+                }
+                else hideMenu();
             }
         };
 
-        const yyy = function(event) {
-            if ((event.target.tagName === 'A') || 
-            (!event.target.closest('.showMenu') && document.querySelector('.showMenu').style.opacity === '1')) {
-                showMenu(event);
-            }
-            if (document.querySelector('.burger').style.opacity === 'none' && document.querySelector('.showMenu').style.opacity === 'none') {
-                showMenu(event);
-            }
+        for (let item of document.querySelectorAll('header, .showMenu')) {
+            item.addEventListener('transitionend', burgerMenu);
         }
+        document.body.addEventListener('click', burgerMenu);
 
-        const xxx = function(event) {
-            const burger = document.querySelector('.burger');
-            const menu = document.querySelector('.showMenu');
-            if (event.target.style.opacity === '0') {
-                if (event.target === burger && burger.dataset.isTrue !== 'true') {
-                    menu.style.opacity = '1';
-                    burger.style.display = 'none';
-                }
-                else {
-                    burger.style.opacity = '1';
-                    menu.style.display = 'none';
-                    burger.dataset.isTrue = 'false';
-                }
-                
-            }
-        };
         
-        createBurgerIcon();
-        document.querySelector('.burger').addEventListener('click', showMenu);
-        document.querySelector('.burger').addEventListener('transitionend', xxx);
-        document.querySelector('.showMenu button').addEventListener('click', showMenu);
-        document.querySelector('.showMenu').addEventListener('transitionend', xxx);
-
-        document.querySelector('.showMenu').addEventListener('click', yyy);
-        document.body.addEventListener('click', yyy);
-
         window.addEventListener('resize', () => {
+            callusButOnCenter();
+
             if (window.screen.width > 499) {
                 document.querySelector('.showMenu button').dispatchEvent(new Event('click'));
             }
+
         });
+
+        window.addEventListener('resize', () => orangeButtonsHoverClassToggler());
+
+
+        function isTouchDevice() { return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+        }
+
+        function orangeButtonsHoverClassToggler () {
+            const buttonsCollection = document.querySelectorAll('.orange-button, .learnmore-button, #prices .circle2.light, #prices a');
+            if (isTouchDevice()) {
+                if (buttonsCollection[0].classList.contains('media-pointer')) {
+                    for (item of buttonsCollection) {
+                        item.classList.remove('media-pointer');
+                    }
+                }
+            }
+            else {
+                if (!buttonsCollection[0].classList.contains('media-pointer')) {
+                    for (item of buttonsCollection) {
+                        item.classList.add('media-pointer');
+                    }
+                }
+            }
+        }
+        orangeButtonsHoverClassToggler();
+
+
+        function blurFunction (event) {
+            const elem = event.target.closest('.orange-button');
+            function removeBlur () {
+                for (item of document.querySelectorAll('#service figure')) item.classList.remove('blured');
+            }
+
+            if (elem === null) {
+                for (item of document.querySelectorAll("#service [data-val='active']")) item.dataset.val = 'inactive';
+                removeBlur();
+                return;
+            }
+            if (elem.hasAttribute('data-gardening')) {
+                
+                const returnOrNot = buttonToggler(elem);
+                if (!returnOrNot) return;
+
+                const inactiveButtons = [];
+                for (item of document.querySelectorAll("#service [data-val='inactive']")) inactiveButtons.push(item.dataset.gardening);
+                
+                removeBlur();
+                if (inactiveButtons.length !== 3) {
+                    inactiveButtons.forEach((i) => {
+                        const cssSelector = `#service .cards6 [data-gardening=\'${i}\']`;
+                        for (item of document.querySelectorAll(cssSelector)) item.closest('figure').classList.toggle('blured');
+                    })
+                }
+            }
+        }
+
+        function pricesAccordion (event) {
+            const elem = event.target.closest('#prices button');
+            if (event.target.closest('#prices img')) {
+                buttonToggler(elem);
+                if (elem.dataset.val === 'active') {
+                    for (item of document.querySelectorAll('#prices [data-val="active"]')) item.dataset.val = 'inactive';
+                    
+                    const buttonText = elem.querySelector('span').firstChild.data;
+                    let priseInSpan = 0;
+                    switch (buttonText) {
+                        case 'Pro care':
+                            priseInSpan = 35;
+                            break;
+                        case 'Standard':
+                            priseInSpan = 25;
+                            break;
+                        case 'Basics':
+                            priseInSpan = 15;
+                            break;
+                    }
+
+                    elem.dataset.val = 'active';
+
+                    let aButtClass = '';
+                    if (!isTouchDevice()) aButtClass = 'class="media-pointer"';
+                    
+                    const button = event.target.closest('#prices button');
+                    const htmlCode = `\n                <section class="accordion">\n                    <section></section>\n                    <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>\n                    <p class="section-price"><span>$${priseInSpan}</span> / per hour</p>\n                    <a ${aButtClass} href="#contacts">Order</a>\n                </section>`
+                    button.insertAdjacentHTML("beforeend", htmlCode);
+                }
+
+                const inactiveButtons = document.querySelectorAll('#prices [data-val="inactive"] .accordion');
+                if (inactiveButtons.length > 0) {
+                    for (item of inactiveButtons) item.remove();
+                }
+            }
+        }
+        
+        function buttonToggler (elem) {
+            const val = elem.dataset.val;
+                if (val === "inactive") {
+                    if (elem.classList.contains('orange-button')) {
+                        if (document.querySelectorAll("#service [data-val='active']").length > 1) return false;
+                    }
+                    if (elem.tagName === 'INPUT') buttonToggler(elem.nextElementSibling);
+                    return elem.dataset.val = 'active';
+                } 
+                else if (val === "active") {
+                    if (elem.tagName === 'INPUT') buttonToggler(elem.nextElementSibling);
+                    return elem.dataset.val = 'inactive';
+                }
+        }
+
+        function cityAll (event) {
+            function cityChooseHide (event) {
+                if (document.querySelectorAll('#contacts form a').length > 0) {
+                    if (!event || !event.target.closest('#contacts form')) {
+                        document.querySelector('#contacts form div').style.display = 'none';
+
+                        const input = document.querySelector('#contacts input');
+                        if (input.dataset.val === 'active') buttonToggler(input);
+
+                        const table = document.querySelector('#contacts table')
+                        if (table) table.style.display = '';
+                    }
+                }     
+            }
+            
+            function cityChoose (event) {
+
+                function past (event) {
+
+                    function createCard () {
+                        const city = document.querySelector('#contacts input').placeholder;
+                            let phone = adress = '';
+                            switch (city) {
+                                case 'Canandaigua, NY':
+                                    phone = '+1	585	393 0001'; adress = '151 Charlotte Street';
+                                    break;
+                                case 'New York City':
+                                    phone = '+1	212	456 0002'; adress = '9 East 91st Street';
+                                    break;
+                                case 'Yonkers, NY':
+                                    phone = '+1	914	678 0003'; adress = '511 Warburton Ave';
+                                    break;
+                                case 'Sherrill, NY':
+                                    phone = '+1	315	908 0004'; adress = '14 WEST Noyes BLVD';
+                                    break;
+                            }
+
+                        const table = document.querySelector('#contacts table');
+                        if (!table) {
+                            const htmlCode = `\n                <table>\n                    <tbody>\n                        <tr>\n                            <td>City:</td>\n                            <td>${city}</td>\n                        </tr>\n                        <tr>\n                            <td>Phone:</td>\n                            <td>${phone}</td>\n                        </tr>\n                        <tr>\n                            <td>Office adress:</td>\n                            <td>${adress}</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            <td><a class="learnmore-button">Call us</a></td>\n                        </tr>\n                    </tbody>\n                </table> `
+                            document.querySelector('#contacts form').insertAdjacentHTML("beforeend", htmlCode);
+                        }
+                        else {
+                            table.style.display = '';
+                            table.rows[0].cells[1].textContent = city;
+                            table.rows[1].cells[1].textContent = phone;
+                            table.rows[2].cells[1].textContent = adress;
+                        }
+                        document.querySelector('#contacts table a').href = `tel:${phone}`
+
+                        callusButOnCenter();
+                    }
+
+                    if (event.target.tagName === 'A') {
+                        document.querySelector('#contacts form input').placeholder = event.target.textContent;
+                        cityChooseHide();
+                        createCard();
+                    }            
+                }
+
+                if (event.target.dataset.val === 'inactive') buttonToggler(event.target);
+
+                if (document.querySelectorAll('#contacts form div a').length === 0) {
+
+                    function createCelectImitator(event) {
+                        const div = document.createElement('div');
+                        document.querySelector('#contacts form').append(div);
+                        const cityList = ['Canandaigua, NY', 'New York City', 'Yonkers, NY', 'Sherrill, NY',];
+                        cityList.forEach((item) => {
+                            const a = document.createElement('a');
+                            div.append(a);
+                            a.textContent = item;
+                        });
+                        
+                        div.addEventListener('click', past);
+                    }
+
+                    createCelectImitator();
+                }
+                else {
+                    let div = document.querySelector('#contacts form div');
+                    if (div.style.display === 'none') div.style.display = 'flex';
+                }
+
+                let table = document.querySelector('#contacts table');
+                if (table) table.style.display = 'none';
+            }
+
+            const ifInput = event.target.closest('#contacts form input');
+            if (ifInput) {
+                if (ifInput.dataset.val === 'inactive') cityChoose(event);
+                else cityChooseHide();
+            } 
+            else cityChooseHide(event);
+
+        }
+
+        function callusButOnCenter () {
+            const table = document.querySelector('#contacts table');
+            if (table) {
+                if (window.screen.width < 500) {
+                    if (table.rows[3].cells.length === 2) {
+                        let button = table.rows[3].cells[1];
+                        button.colspan = '2';
+                        table.rows[3].cells[0].remove();
+
+                        button = button.parentElement;
+                        button.style.display = 'flex';
+                        button.style.flexDirection = 'column';
+                        button.style.alignItems = 'center';
+                    }
+                    else return;
+                }
+                else {
+                    if (table.rows[3].cells.length < 2) {
+                        let button = table.rows[3].cells[0];
+                        table.rows[3].cells[0].insertAdjacentHTML('beforebegin', '<td></td>');
+
+                        button.parentElement.style.display = '';
+                    }
+                }
+            }
+        }
+        
+        document.querySelector('main').addEventListener('click', blurFunction);
+        document.querySelector('main').addEventListener('click', pricesAccordion);
+        document.querySelector('main').addEventListener('click', cityAll);
     </script>
     <script src="index.js"></script>
 </body>

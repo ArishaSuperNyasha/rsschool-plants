@@ -7,9 +7,169 @@
     --my-grey: rgb(113, 113, 113);
 }
 
+.media-pointer.learnmore-button:hover, .media-pointer.orange-button:hover {
+    background-color: var(--my-orange);
+    color: white;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+}
+
+#prices button{
+    display: flex; flex-direction: column; align-items: flex-start;
+}
+
+.blured {
+    filter: blur(0.208vw) !important;
+}
+
+.accordion section {
+    width: 100%; height: 1px; 
+    background-color: rgb(174, 161, 161);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.accordion p {
+    color: var(--my-grey);
+    font: normal 10px/10px 'Inter', 'Inika', sans-serif;
+}
+
+.accordion .section-price {
+    font-size: 12px; line-height: 20px;
+    color: black;
+}
+
+.accordion .section-price span {
+    color: var(--my-orange);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.accordion a {
+    font: bold 14px/20px 'Inter', 'Inika', sans-serif;
+    text-decoration: none;
+    color: var(--my-grey);
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px 20px;
+}
+
+.accordion a.media-pointer:hover {
+    background-color: var(--my-orange);
+    color: white;
+    transition: 0.25s;
+}
+
+#prices [data-val='active'] {
+    background-color: rgb(214, 231, 210);
+}
+
+#prices [data-val='active'] .post-verstka {
+    border-color: rgba(0, 0, 0, 0);
+}
+
+#prices .media-pointer.circle2.light:hover{
+    filter: invert(100%) brightness(4.5);
+    transition: 0.001s;
+}
+
+#prices [data-val='active'] .circle2.light{
+    transform: rotate(180deg);
+    filter: invert(100%) brightness(4.5);
+    transition: 0.5s;
+}
+
+#contacts form div {
+    display: flex; flex-direction: column; 
+    justify-content: space-between; 
+    padding: calc(10vw / 144 * 27) calc(10vw / 144 * 50) calc(10vw / 144 * 31) calc(10vw / 144 * 20); 
+    height: calc(10vw / 144 * 176);
+    background-color: rgb(214, 231, 210);
+}
+
+#contacts form div a {
+    padding: 0 calc(60vw / 144);
+    color: rgb(73, 154, 24);
+    border-bottom: 1px solid rgb(217, 217, 217);
+    transition: 0.25s;
+}
+
+#contacts form div a:hover {
+    color: var(--my-grey);
+    border-color: var(--my-grey);
+}
+
+td, #contacts form div a {  
+    font: normal calc(160vw / 144)/calc(400vw / 144) 'Inter', 'Inika', sans-serif;
+    letter-spacing: calc(5vw / 144);
+}
+
+td:first-child {
+    color: black;
+    padding-right: calc(100vw / 144);
+}
+
+td:last-child {
+    flex-grow: 1;
+    color: var(--my-grey);
+}
+
+table {
+    display: flex;
+    width: 100%;
+    padding: calc(10vw / 144 * 17) calc(10vw / 144 * 35) calc(10vw / 144 * 32);
+    border: calc(10vw / 144) solid black;
+    border-radius: calc(10vw / 144 * 20);
+    margin-top: calc(10vw / 144 * 47);
+}
+
+#contacts table .learnmore-button {
+    display: block; text-align: center;
+    font: bold calc(10vw / 144 * 10) 'Inika', sans-serif;
+    width: calc(10vw / 144 * 122);
+    border-radius: calc(10vw / 144 * 5);
+    border-width: calc(10vw / 144);
+}
+
+@media (max-width: 1023px) {
+    .blured {
+        filter: blur(0.9765vw) !important;
+    }
+
+    #contacts form div {
+        padding: 27px 50px 31px 20px; 
+        height: 176px;
+    }
+    
+    #contacts form div a {
+        padding: 0 6px;
+    }
+    
+    td, #contacts form div a {  
+        font-size: 16px; line-height: 40px;
+        letter-spacing: 0.5px;
+    }
+    
+    td:first-child {
+        padding-right: 10px;
+    }
+    
+    table {
+        padding: 17px 35px 32px;
+        border-width: 1px;
+        border-radius: 20px;
+        margin-top: 47px;
+    }
+    
+    #contacts table .learnmore-button {
+        font-size: 10px;
+        width: 122px;
+        border-radius: 5px;
+        border-width: 1px;
+    }
 }
 
 /*Шапка*/
@@ -68,8 +228,8 @@ html {
 /*Первая секция*/
 
 body {
-    padding-left: 7.5694%; padding-right: 7.5694%;;
-    margin: 0px;
+    padding: 0;
+    margin: 0 7.5694%;
     font-family: 'Inter', 'Inika', sans-serif;
     font-size: 20px;
 }
@@ -101,10 +261,6 @@ h1 {
     transition: 0.25s;
 }
 
-.learnmore-button:hover {
-    background-color: var(--my-orange);
-    color: white;
-}
 
 /*Секция о нас*/
 
@@ -173,7 +329,7 @@ h1 {
     width: fit-content; height: fit-content;
 }
 
-.orange-button:hover {
+#service [data-val='active']{
     background-color: var(--my-orange);
     color: white;
 }
@@ -187,6 +343,7 @@ figure {
     width: min-content; margin: 0px;
     border: 1px solid rgb(227, 225, 213);
     border-radius: 20px;
+    transition: 0.25s;
 }
 
 figure img {
@@ -233,7 +390,7 @@ figure figcaption p {
     display: flex; flex-direction: row;
 }
 
-.colomn-right button{
+.post-verstka, .colomn-right button{
     display: flex; flex-direction: column;
     flex-direction: row; justify-content: flex-end;
     align-items: center;
@@ -243,6 +400,10 @@ figure figcaption p {
     border: 1px solid rgba(237, 242, 236, 1);
     border-radius: 20px;
     margin: 32px 0px 32px 41px;
+}
+
+.post-verstka {
+    margin: 0 !important; padding: 0 !important;
 }
 
 .colomn-left {
@@ -257,14 +418,10 @@ figure figcaption p {
     transition: 0.25s;
 }
 
-.orange-button.contact-us:hover{
-    background-color: var(--my-orange);
-    color: white;
-}
-
 #prices .colomn-right div {
     margin-top: 60px; margin-bottom: 129px;
-    width: 332px; height: 282px;
+    width: 332px; 
+    height: fit-content; min-height: 282px;
     border: 1px solid rgb(227, 225, 213); border-radius: 20px;
 
 }
@@ -286,13 +443,21 @@ input {
     border: none;
     box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
     transition: 0.6s;
+    outline: none;
 }
 
-input:focus {
-    outline: none;
-    background-color: rgb(193, 230, 152);
-    color: rgb(113, 113, 113);
+input[data-val='active'] {
+    filter: saturate(4) hue-rotate(-15deg);
     box-shadow: none;
+}
+
+#contacts img {
+    transition: 0.6s;
+}
+
+#contacts img[data-val='active'] {
+    background-color: rgb(139, 160, 126);
+    transform: rotate(180deg);
 }
 
 .contacts h2 {
@@ -325,6 +490,31 @@ footer img {
 }
 
 @media (min-width: 1024px) {
+    
+    .accordion section {
+        height: 0.0347vw;
+        margin-top: 0.694vw;
+        border-radius: 0.694vw;
+    }
+
+    .accordion p {
+        font-size: 0.694vw; line-height: 0.694vw;
+    }
+
+    .accordion .section-price {
+        font-size: 0.833vw; line-height: 1.389vw;
+    }
+
+    .accordion .section-price span {
+        font-size: 1.111vw;
+    }
+
+    .accordion a {
+        font-size: 0.972vw; line-height: 1.389vw;
+        border-radius: 0.694vw;
+        padding: 0.2083vw 1.389vw;
+    }
+
     /*Шапка*/
 
     header {
@@ -355,16 +545,12 @@ footer img {
     /*Первая секция*/
     
     .about-row [alt="leafs"] {
-        width: 36.8% !important; height: auto !important; 
-        margin: 4.9% 18.38% 4.9% 0 !important;
-    }
-    
-    html {
-        width: 100vw;
+        width: 31.181vw; height: auto; 
+        margin: 4.167vw 15.556vw 4.167vw 0;
     }
     
     body {
-        padding: 0 7.639%;
+        margin: 0 7.639%;
         font-size: 1.3889vw;
     }
     
@@ -376,7 +562,7 @@ footer img {
     .learnmore-button {
         font: 1.1111vw/1.25vw 'Inter', sans-serif;
         padding: 2.01% 4.755%;
-        border-radius: 10px;
+        border-radius: 0.694vw;
         margin-top: 8.778%;
     }
     
@@ -398,8 +584,8 @@ footer img {
     }
     
     #about img {
-        width: 38.03%; height: auto;
-        margin: 0; margin-left: 12.54%;
+        width: 32.22vw; height: auto;
+        margin: 0; margin-left: 10.625vw;
     }
     
     /*Секция сервиса и продуктов*/
@@ -425,8 +611,8 @@ footer img {
     .orange-button {
         width: 28.8%; height: 3.47vw;
         font: 1.3889vw 'Inika', sans-serif;
-        border: 1px solid var(--my-orange);
-        border-radius: 5px;
+        border: 0.0694vw solid var(--my-orange);
+        border-radius: 0.347vw;
         margin: 0;
         padding: 0;
     }
@@ -442,7 +628,7 @@ footer img {
     }
     
     figure img {
-        border-top-right-radius: 20px; border-top-left-radius: 20px;
+        border-top-right-radius: 1.389vw; border-top-left-radius: 1.389vw;
         object-fit: cover;
         width: 22.847222vw; height: 24.305555vw;
     }
@@ -463,10 +649,10 @@ footer img {
         min-width: 6px; min-height: 4px;
         width: 0.4167vw; height: 0.2778vw;
         padding: 0.4167vw 0.347vw;
-        border-radius: 16px;
+        border-radius: 1.11vw;
     }
 
-    .prices .circle2 {
+    .prices {
         margin-right: 1.111vw !important;
     }
 
@@ -491,11 +677,11 @@ footer img {
         flex-grow: 1;
     }
     
-    .colomn-right button{
+    .post-verstka, .colomn-right button{
         font: bold 1.3889vw/1.3889vw 'Inter', sans-serif;
-        width: 100%; padding: 6% 0 6% 16%;
-        border: 1px solid rgba(237, 242, 236, 1);
-        border-radius: 20px;
+        width: 100%; padding: 6% 16%;
+        border: 0.0694vw solid rgba(237, 242, 236, 1);
+        border-radius: 1.389vw;
         margin: 0;
     }
     
@@ -509,9 +695,10 @@ footer img {
         display: flex; flex-direction: column;
         justify-content: space-between; align-items: stretch;
         margin: 7.822% auto 0 0;
-        width: 32.593%; height: 14.862vw;
-        border: 1px solid rgb(227, 225, 213); border-radius: 20px;
-        padding: 4.43% 5.345%; 
+        width: 17.36vw; 
+        min-height: 14.862vw;
+        border: 0.0694vw solid rgb(227, 225, 213); border-radius: 1.389vw;
+        padding: 2.34vw 2.847vw; 
     
     }
     
@@ -593,7 +780,7 @@ footer img {
     .learnmore-button {
         font-size: 0.5em; line-height: 2em;
         padding: 2.44% 5.455%;
-        border-radius: 10px; border-width: 2px;
+        border-radius: 2.6316vw; border-width: 0.526vw;
         margin-top: 6.08%;
     }
 
@@ -623,7 +810,7 @@ footer img {
 
     body {
         width: 86.842% !important;
-        margin: 0; padding: 0 6.578947% !important;
+        margin: 0 6.578947% !important;
     }
 
     .service-buttons {
@@ -688,16 +875,22 @@ footer img {
     }
 
     #prices .colomn-right div {
+        display: flex; flex-direction: column; justify-content: space-between;
+        min-height: 46.579vw;
         margin: 12.12% auto 5.76% auto;
-        width: 54.5454%; height: fit-content;
-        padding: 4.5454% 6.6667%;
+        width: 54.5454%;
+        padding: 7.632vw 5.789vw;
     }
 
-    .colomn-right button {
-        font-size: 0.75em; line-height: 1.333em;
+    .post-verstka, .colomn-right button {
+        font-size: 3.947vw; line-height: 1.333em;
         padding: 7.778% 22.22% 7.778% 16.666% !important;
-        margin: 7.778% auto !important;
+        margin: 0 !important;
         width: 100%; min-width: fit-content;
+    }
+
+    .post-verstka {
+        margin: 0 !important; padding: 0 !important;
     }
 
     #prices .colomn-left, #contacts {
@@ -811,7 +1004,7 @@ footer img {
     .learnmore-button {
         font-size: 0.8em; line-height: 1.25em;
         padding: 4.06% 7.83%;
-        border-radius: 10px; border-width: 2px;
+        border-radius: 1.3vw; border-width: 0.13vw;
         margin-top: 8.7%;
     }
 
@@ -844,7 +1037,7 @@ footer img {
 
     body {
         width: 86.842%;
-        padding-left: 6.5796%; padding-right: 6.5796%;
+        margin: 0 6.5796%;
     }
 
     .service-buttons {
@@ -921,7 +1114,7 @@ footer img {
     #prices .colomn-right div {
         margin: 13.27% 10.6% 20.17% 0;
         width: auto; max-width: 65.58%;
-        height: 24.403vh !important;
+        min-height: 24.403vh !important;
         padding: 8.92% 10.7556%;
         display: flex; flex-direction: column; justify-content: space-between;
     }
@@ -930,11 +1123,15 @@ footer img {
         min-width: 57.12%;
     }
 
-    .colomn-right button {
+    .post-verstka, .colomn-right button {
         font-size: 1em; line-height: 1em;
         margin: 0;
         padding: 6.402% 16.005% !important;
         width: 100%;
+    }
+
+    .post-verstka {
+        padding: 0 !important; margin: 0 !important;
     }
 
     #contacts {
@@ -991,6 +1188,18 @@ footer img {
     form {
         width: 67.466%;
     }
+
+    input {
+        width: 58.59375vw;
+        height: 5.51vw;
+        padding: 0.65vw 2.6vw 0.65vw 4.5573vw;
+        font-size: 2.6vw; line-height: 5.21vw;
+        box-shadow: 0 0.521vw 0.521vw 0.26vw rgba(0, 0, 0, 0.25);
+    }
+
+    #contacts .circle2 {
+        width: 0.78vw; height: 0.521vw;
+    } 
 
     /*Подвал*/
 
