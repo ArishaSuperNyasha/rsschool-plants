@@ -180,6 +180,7 @@
         };
         createBurgerIcon();
 
+        
         function burgerMenu (event) {
             const burger = document.querySelector('.burger');
             const menu = document.querySelector('.showMenu');
@@ -222,16 +223,48 @@
             }
         };
 
+        for (let item of document.querySelectorAll('header, .showMenu')) {
+            item.addEventListener('transitionend', burgerMenu);
+        }
         document.body.addEventListener('click', burgerMenu);
-        document.body.addEventListener('transitionend', burgerMenu);
 
+        
         window.addEventListener('resize', () => {
+            callusButOnCenter();
+
             if (window.screen.width > 499) {
                 document.querySelector('.showMenu button').dispatchEvent(new Event('click'));
             }
 
-            callusButOnCenter();
         });
+
+        window.addEventListener('resize', () => orangeButtonsHoverClassToggler());
+
+
+        function isTouchDevice() { return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+        }
+
+        function orangeButtonsHoverClassToggler () {
+            const buttonsCollection = document.querySelectorAll('.orange-button, .learnmore-button, #prices .circle2.light, #prices a');
+            if (isTouchDevice()) {
+                if (buttonsCollection[0].classList.contains('media-pointer')) {
+                    for (item of buttonsCollection) {
+                        item.classList.remove('media-pointer');
+                    }
+                }
+            }
+            else {
+                if (!buttonsCollection[0].classList.contains('media-pointer')) {
+                    for (item of buttonsCollection) {
+                        item.classList.add('media-pointer');
+                    }
+                }
+            }
+        }
+        orangeButtonsHoverClassToggler();
+
 
         function blurFunction (event) {
             const elem = event.target.closest('.orange-button');
@@ -285,8 +318,11 @@
 
                     elem.dataset.val = 'active';
 
+                    let aButtClass = '';
+                    if (!isTouchDevice()) aButtClass = 'class="media-pointer"';
+                    
                     const button = event.target.closest('#prices button');
-                    const htmlCode = `\n                <section class="accordion">\n                    <section></section>\n                    <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>\n                    <p class="section-price"><span>$${priseInSpan}</span> / per hour</p>\n                    <a href="#contacts">Order</a>\n                </section>`
+                    const htmlCode = `\n                <section class="accordion">\n                    <section></section>\n                    <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>\n                    <p class="section-price"><span>$${priseInSpan}</span> / per hour</p>\n                    <a ${aButtClass} href="#contacts">Order</a>\n                </section>`
                     button.insertAdjacentHTML("beforeend", htmlCode);
                 }
 
@@ -300,7 +336,7 @@
         function buttonToggler (elem) {
             const val = elem.dataset.val;
                 if (val === "inactive") {
-                    if (elem.className === 'orange-button') {
+                    if (elem.classList.contains('orange-button')) {
                         if (document.querySelectorAll("#service [data-val='active']").length > 1) return false;
                     }
                     if (elem.tagName === 'INPUT') buttonToggler(elem.nextElementSibling);
@@ -312,91 +348,101 @@
                 }
         }
 
-        function cityChoose (event) {
+        function cityAll (event) {
+            function cityChooseHide (event) {
+                if (document.querySelectorAll('#contacts form a').length > 0) {
+                    if (!event || !event.target.closest('#contacts form')) {
+                        document.querySelector('#contacts form div').style.display = 'none';
 
-            function past (event) {
+                        const input = document.querySelector('#contacts input');
+                        if (input.dataset.val === 'active') buttonToggler(input);
 
-                function createCard () {
-                    const city = document.querySelector('#contacts input').placeholder;
-                        let phone = adress = '';
-                        switch (city) {
-                            case 'Canandaigua, NY':
-                                phone = '+1	585	393 0001'; adress = '151 Charlotte Street';
-                                break;
-                            case 'New York City':
-                                phone = '+1	212	456 0002'; adress = '9 East 91st Street';
-                                break;
-                            case 'Yonkers, NY':
-                                phone = '+1	914	678 0003'; adress = '511 Warburton Ave';
-                                break;
-                            case 'Sherrill, NY':
-                                phone = '+1	315	908 0004'; adress = '14 WEST Noyes BLVD';
-                                break;
-                        }
-
-                    const table = document.querySelector('#contacts table');
-                    if (!table) {
-                        const htmlCode = `\n                <table>\n                    <tbody>\n                        <tr>\n                            <td>City:</td>\n                            <td>${city}</td>\n                        </tr>\n                        <tr>\n                            <td>Phone:</td>\n                            <td>${phone}</td>\n                        </tr>\n                        <tr>\n                            <td>Office adress:</td>\n                            <td>${adress}</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            <td><a class="learnmore-button">Call us</a></td>\n                        </tr>\n                    </tbody>\n                </table> `
-                        document.querySelector('#contacts form').insertAdjacentHTML("beforeend", htmlCode);
+                        const table = document.querySelector('#contacts table')
+                        if (table) table.style.display = '';
                     }
-                    else {
-                        table.style.display = '';
-                        table.rows[0].cells[1].textContent = city;
-                        table.rows[1].cells[1].textContent = phone;
-                        table.rows[2].cells[1].textContent = adress;
-                    }
-                    document.querySelector('#contacts table a').href = `tel:${phone}`
-
-                    callusButOnCenter();
-                }
-
-                if (event.target.tagName === 'A') {
-                    document.querySelector('#contacts form input').placeholder = event.target.textContent;
-                    cityChooseHide();
-                    createCard();
-                }            
+                }     
             }
             
-            if (event.target.dataset.val === 'inactive') buttonToggler(event.target);
+            function cityChoose (event) {
 
-            if (document.querySelectorAll('#contacts form div a').length === 0) {
+                function past (event) {
 
-                function createCelectImitator(event) {
-                    const div = document.createElement('div');
-                    document.querySelector('#contacts form').append(div);
-                    const cityList = ['Canandaigua, NY', 'New York City', 'Yonkers, NY', 'Sherrill, NY',];
-                    cityList.forEach((item) => {
-                        const a = document.createElement('a');
-                        div.append(a);
-                        a.textContent = item;
-                    });
-                    
-                    div.addEventListener('click', past);
+                    function createCard () {
+                        const city = document.querySelector('#contacts input').placeholder;
+                            let phone = adress = '';
+                            switch (city) {
+                                case 'Canandaigua, NY':
+                                    phone = '+1	585	393 0001'; adress = '151 Charlotte Street';
+                                    break;
+                                case 'New York City':
+                                    phone = '+1	212	456 0002'; adress = '9 East 91st Street';
+                                    break;
+                                case 'Yonkers, NY':
+                                    phone = '+1	914	678 0003'; adress = '511 Warburton Ave';
+                                    break;
+                                case 'Sherrill, NY':
+                                    phone = '+1	315	908 0004'; adress = '14 WEST Noyes BLVD';
+                                    break;
+                            }
+
+                        const table = document.querySelector('#contacts table');
+                        if (!table) {
+                            const htmlCode = `\n                <table>\n                    <tbody>\n                        <tr>\n                            <td>City:</td>\n                            <td>${city}</td>\n                        </tr>\n                        <tr>\n                            <td>Phone:</td>\n                            <td>${phone}</td>\n                        </tr>\n                        <tr>\n                            <td>Office adress:</td>\n                            <td>${adress}</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            <td><a class="learnmore-button">Call us</a></td>\n                        </tr>\n                    </tbody>\n                </table> `
+                            document.querySelector('#contacts form').insertAdjacentHTML("beforeend", htmlCode);
+                        }
+                        else {
+                            table.style.display = '';
+                            table.rows[0].cells[1].textContent = city;
+                            table.rows[1].cells[1].textContent = phone;
+                            table.rows[2].cells[1].textContent = adress;
+                        }
+                        document.querySelector('#contacts table a').href = `tel:${phone}`
+
+                        callusButOnCenter();
+                    }
+
+                    if (event.target.tagName === 'A') {
+                        document.querySelector('#contacts form input').placeholder = event.target.textContent;
+                        cityChooseHide();
+                        createCard();
+                    }            
                 }
 
-                createCelectImitator();
-            }
-            else {
-                let div = document.querySelector('#contacts form div');
-                if (div.style.display === 'none') div.style.display = 'flex';
-            }
-         
-            let table = document.querySelector('#contacts table');
-            if (table) table.style.display = 'none';
-        }
+                if (event.target.dataset.val === 'inactive') buttonToggler(event.target);
 
-        function cityChooseHide (event) {
-            if (document.querySelectorAll('#contacts form a').length > 0) {
-                if (!event || !event.target.closest('#contacts form')) {
-                    document.querySelector('#contacts form div').style.display = 'none';
+                if (document.querySelectorAll('#contacts form div a').length === 0) {
 
-                    const input = document.querySelector('#contacts input');
-                    if (input.dataset.val === 'active') buttonToggler(input);
+                    function createCelectImitator(event) {
+                        const div = document.createElement('div');
+                        document.querySelector('#contacts form').append(div);
+                        const cityList = ['Canandaigua, NY', 'New York City', 'Yonkers, NY', 'Sherrill, NY',];
+                        cityList.forEach((item) => {
+                            const a = document.createElement('a');
+                            div.append(a);
+                            a.textContent = item;
+                        });
+                        
+                        div.addEventListener('click', past);
+                    }
 
-                    const table = document.querySelector('#contacts table')
-                    if (table) table.style.display = '';
+                    createCelectImitator();
                 }
+                else {
+                    let div = document.querySelector('#contacts form div');
+                    if (div.style.display === 'none') div.style.display = 'flex';
+                }
+
+                let table = document.querySelector('#contacts table');
+                if (table) table.style.display = 'none';
+            }
+
+            const ifInput = event.target.closest('#contacts form input');
+            if (ifInput) {
+                if (ifInput.dataset.val === 'inactive') cityChoose(event);
+                else cityChooseHide();
             } 
+            else cityChooseHide(event);
+
         }
 
         function callusButOnCenter () {
@@ -425,12 +471,10 @@
                 }
             }
         }
-
-        document.body.addEventListener('click', blurFunction);
-        document.body.addEventListener('click', pricesAccordion);
-
-        document.querySelector('input').addEventListener('focus', cityChoose);
-        document.body.addEventListener('click', cityChooseHide);
+        
+        document.querySelector('main').addEventListener('click', blurFunction);
+        document.querySelector('main').addEventListener('click', pricesAccordion);
+        document.querySelector('main').addEventListener('click', cityAll);
     </script>
 </body>
 </html>

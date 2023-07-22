@@ -7,7 +7,10 @@
     --my-grey: rgb(113, 113, 113);
 }
 
-
+.media-pointer.learnmore-button:hover, .media-pointer.orange-button:hover {
+    background-color: var(--my-orange);
+    color: white;
+}
 
 html {
     scroll-behavior: smooth;
@@ -54,7 +57,7 @@ html {
     padding: 3px 20px;
 }
 
-.accordion a:hover {
+.accordion a.media-pointer:hover {
     background-color: var(--my-orange);
     color: white;
     transition: 0.25s;
@@ -68,7 +71,7 @@ html {
     border-color: rgba(0, 0, 0, 0);
 }
 
-#prices .circle2.light:hover{
+#prices .media-pointer.circle2.light:hover{
     filter: invert(100%) brightness(4.5);
     transition: 0.001s;
 }
@@ -91,6 +94,12 @@ html {
     padding: 0 calc(60vw / 144);
     color: rgb(73, 154, 24);
     border-bottom: 1px solid rgb(217, 217, 217);
+    transition: 0.25s;
+}
+
+#contacts form div a:hover {
+    color: var(--my-grey);
+    border-color: var(--my-grey);
 }
 
 td, #contacts form div a {  
@@ -248,10 +257,6 @@ h1 {
     transition: 0.25s;
 }
 
-.learnmore-button:hover {
-    background-color: var(--my-orange);
-    color: white;
-}
 
 /*Секция о нас*/
 
@@ -409,11 +414,6 @@ figure figcaption p {
     transition: 0.25s;
 }
 
-.orange-button:hover{
-    background-color: var(--my-orange);
-    color: white;
-}
-
 #prices .colomn-right div {
     margin-top: 60px; margin-bottom: 129px;
     width: 332px; 
@@ -439,10 +439,10 @@ input {
     border: none;
     box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
     transition: 0.6s;
+    outline: none;
 }
 
-input:focus, input[data-val='active'] {
-    outline: none;
+input[data-val='active'] {
     filter: saturate(4) hue-rotate(-15deg);
     box-shadow: none;
 }
